@@ -34,11 +34,11 @@ def runTest(path):
 
     outputfilepath = os.path.splitext(os.path.basename(path))[0]
     print(outputfilepath)
-    fd = open(os.path.join(handinpath, outputfilepath + ".txt"), "w")
+    fd = open(os.path.join(handinpath, outputfilepath + ".html"), "w")
     fd.write(output)
     fd.close()
 
-    m = re.search(r'''Score:\s+\d+\/+\d+\s+-+\s+(\d*.+\d)\%$''', output)
+    m = re.search(r'''Score:\s+\d+\/+\d+\s+-+\s+(\d*.+\d)\%''', output)
     if not m is None:
         print("Got score of {}%".format(m.group(1)))
     else:
